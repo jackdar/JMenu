@@ -12,11 +12,11 @@ import java.util.Scanner;
  * Date: 22/03/2023
  */
 
-abstract public class Menu {
+abstract public class AbstractMenu {
 
     private String title;
     private String description;
-    public Menu back;
+    public AbstractMenu back;
     
     private Control control;
     private int selection;
@@ -37,11 +37,11 @@ abstract public class Menu {
         this.description = description;
     }
 
-    public Menu getBack() {
+    public AbstractMenu getBack() {
         return back;
     }
 
-    public void setBack(Menu back) {
+    public void setBack(AbstractMenu back) {
         this.back = back;
     }
 
@@ -61,7 +61,7 @@ abstract public class Menu {
         this.selection = selection;
     }
     
-    public Menu() {
+    public AbstractMenu() {
         this.title = "";
         this.description = "";
         this.back = null;
@@ -70,7 +70,7 @@ abstract public class Menu {
         this.selection = 0;
     }
     
-    public Menu(Menu back) {
+    public AbstractMenu(AbstractMenu back) {
         this.title = "";
         this.description = "";
         this.back = back;
@@ -79,7 +79,7 @@ abstract public class Menu {
         this.selection = 0;
     }
     
-    public Menu(String title) {
+    public AbstractMenu(String title) {
         this.title = title;
         this.description = "";
         this.back = null;
@@ -88,7 +88,7 @@ abstract public class Menu {
         this.selection = 0;
     }
     
-    public Menu(String title, Menu back) {
+    public AbstractMenu(String title, AbstractMenu back) {
         this.title = title;
         this.description = "";
         this.back = back;
@@ -97,7 +97,7 @@ abstract public class Menu {
         this.selection = 0;
     }
     
-    public Menu(String title, String description) {
+    public AbstractMenu(String title, String description) {
         this.title = title;
         this.description = description;
         this.back = null;
@@ -106,7 +106,7 @@ abstract public class Menu {
         this.selection = 0;
     }
     
-    public Menu(String title, String description, Menu back) {
+    public AbstractMenu(String title, String description, AbstractMenu back) {
         this.title = title;
         this.description = description;
         this.back = back;
@@ -134,7 +134,7 @@ abstract public class Menu {
     }
     
     public void print() {
-        Menu.clearConsole();
+        AbstractMenu.clearConsole();
         this.printTitle();
         this.printDescription();
     }

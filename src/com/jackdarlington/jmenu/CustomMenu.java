@@ -10,13 +10,13 @@ package com.jackdarlington.jmenu;
  * Date: 22/03/2023
  */
 
-public class CustomMenu extends Menu {
+public class CustomMenu extends AbstractMenu {
 
     public CustomMenu() {
         super();
     }
     
-    public CustomMenu(Menu back) {
+    public CustomMenu(AbstractMenu back) {
         super(back);
     }
     
@@ -24,7 +24,7 @@ public class CustomMenu extends Menu {
         super(title);
     }
     
-    public CustomMenu(String title, Menu back) {
+    public CustomMenu(String title, AbstractMenu back) {
         super(title, back);
     }
     
@@ -32,7 +32,7 @@ public class CustomMenu extends Menu {
         super(title, description);
     }
     
-    public CustomMenu(String title, String description, Menu back) {
+    public CustomMenu(String title, String description, AbstractMenu back) {
         super(title, description, back);
     }
     

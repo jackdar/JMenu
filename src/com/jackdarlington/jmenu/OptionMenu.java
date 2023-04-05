@@ -13,16 +13,16 @@ import java.util.Map.Entry;
  * Date: 22/03/2023
  */
 
-public class OptionMenu extends Menu {
+public class OptionMenu extends AbstractMenu {
 
-    private final LinkedHashMap<Integer, Menu> options = new LinkedHashMap<>();
+    private final LinkedHashMap<Integer, AbstractMenu> options = new LinkedHashMap<>();
     private int menuOptionNum = 1;
     
     public OptionMenu() {
         super();
     }
     
-    public OptionMenu(Menu back) {
+    public OptionMenu(AbstractMenu back) {
         super(back);
     }
     
@@ -30,7 +30,7 @@ public class OptionMenu extends Menu {
         super(title);
     }
     
-    public OptionMenu(String title, Menu back) {
+    public OptionMenu(String title, AbstractMenu back) {
         super(title, back);
     }
     
@@ -38,16 +38,16 @@ public class OptionMenu extends Menu {
         super(title, description);
     }
     
-    public OptionMenu(String title, String description, Menu back) {
+    public OptionMenu(String title, String description, AbstractMenu back) {
         super(title, description, back);
     }
     
-    public void add(Menu menu) {
+    public void add(AbstractMenu menu) {
         this.options.put(this.menuOptionNum, menu);
         this.menuOptionNum++;
     }
     
-    public void remove(Menu menu) {
+    public void remove(AbstractMenu menu) {
         for (Entry e : this.options.entrySet()) {
             if (e.getValue().equals(menu)) {
                 this.options.remove(e.getKey());
@@ -58,7 +58,7 @@ public class OptionMenu extends Menu {
     
     @Override
     public void print() {
-        Menu.clearConsole();
+        AbstractMenu.clearConsole();
         this.printTitle();
         this.printDescription();
         for (Entry e : this.options.entrySet()) {
